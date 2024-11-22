@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Service
 public class AccountService {
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     @Autowired
     public AccountService(AccountRepository accountRepository){
@@ -74,6 +74,8 @@ public class AccountService {
                 .firstName(account.getFirstName())
                 .lastName(account.getLastName())
                 .region(account.getRegion())
+                .creationDateTime(account.getCreationDateTime())
+                .expirationDateTime(account.getExpirationDateTime())
                 .build());
 
     }
