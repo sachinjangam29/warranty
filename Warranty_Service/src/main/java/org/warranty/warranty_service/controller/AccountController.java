@@ -30,6 +30,12 @@ public class AccountController {
         }
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody AccountRequest accountRequest){
+       String jwt = accountService.login(accountRequest);
+        return ResponseEntity.ok(jwt);
+    }
+
     @GetMapping("/all-users")
     public Page<AccountResponse> getAllUsersData(@RequestParam(value = "page", defaultValue = "0") int page,
                                                  @RequestParam(value = "size", defaultValue = "5") int size,
