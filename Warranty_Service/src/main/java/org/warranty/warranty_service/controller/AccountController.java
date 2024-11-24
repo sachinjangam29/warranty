@@ -10,7 +10,6 @@ import org.warranty.warranty_service.payload.request.AccountRequest;
 import org.warranty.warranty_service.payload.response.AccountResponse;
 import org.warranty.warranty_service.service.AccountService;
 
-import java.util.List;
 
 @RequestMapping("/api/user")
 @RestController
@@ -31,12 +30,24 @@ public class AccountController {
         }
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody AccountRequest accountRequest){
+       String jwt = accountService.login(accountRequest);
+        return ResponseEntity.ok(jwt);
+    }
+
     @GetMapping("/all-users")
     public Page<AccountResponse> getAllUsersData(@RequestParam(value = "page", defaultValue = "0") int page,
                                                  @RequestParam(value = "size", defaultValue = "5") int size,
                                                  @RequestParam(value = "sortby", defaultValue = "userId") String sortBy,
                                                  @RequestParam(value = "sortDirection", defaultValue = "asc") String sortDirection){
        return accountService.getAllUsers(page, size, sortBy, sortDirection);
+    }
+
+    @GetMapping("/hello")
+    public ResponseEntity<String> printHello(){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("hello this is sachin");
     }
 
     @DeleteMapping("/all-users")

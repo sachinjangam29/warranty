@@ -1,8 +1,6 @@
 package org.warranty.warranty_service.payload.response;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +22,7 @@ public class AccountResponse {
 
     private String userId;
 
-    private String password;
+//    private String password;
 
     private LocalDateTime creationDateTime;
 
