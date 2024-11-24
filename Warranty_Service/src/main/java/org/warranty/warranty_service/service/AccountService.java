@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @Service
 public class AccountService {
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final UserDetailsServiceImpl userDetailsService;
