@@ -62,4 +62,8 @@ public class Account {
     @NotNull
     @Column(name = "contact")
     private Long contactNumber;
+
+    @Enumerated(EnumType.ORDINAL)
+    @Column(nullable = false)
+    private Role role;
 }

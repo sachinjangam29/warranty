@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.warranty.warranty_service.model.Role;
 
 import java.time.LocalDateTime;
 
@@ -33,4 +34,6 @@ public class AccountResponse {
     private String region;
 
     private Long contactNumber;
+
+    private Role role;
 }

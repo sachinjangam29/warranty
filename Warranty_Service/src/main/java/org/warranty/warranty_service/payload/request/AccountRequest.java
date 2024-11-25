@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.warranty.warranty_service.model.Role;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -46,4 +47,6 @@ public class AccountRequest {
 
     @NotNull
     private Long contactNumber;
+
+    private Role role;
 }
